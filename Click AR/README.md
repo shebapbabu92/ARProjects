@@ -54,8 +54,4 @@ As part of a comparative thesis, Click AR helped analyze:
 
 ---
 
-### License
-
-Click AR is part of a research thesis. Any use of this project should be consistent with research and academic guidelines.
-
 

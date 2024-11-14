@@ -56,6 +56,3 @@ Focus AR is part of a thesis that includes:
 
 ---
 
-### License
-
-Focus AR is developed as part of a thesis project. Usage of this code should be aligned with academic and research integrity guidelines.
