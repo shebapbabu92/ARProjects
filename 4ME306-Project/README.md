@@ -19,13 +19,34 @@ The **4ME306** project, created for AR Workshop 2 in the *Cross Media Design and
 2. **Proximity-Based Scaling**: Implements dynamic scaling of AR content based on the distance between two markers ("Content" and "Plus").
 3. **Controlled Scaling Limits**: Prevents AR content from exceeding a defined maximum scale, maintaining visual clarity and consistency.
 
+# AR Marker Interaction and Scaling System
+
 ## Functionality
 
-The main functionality is handled by the `ImageTargetDistanceScaleManager` class, which performs the following tasks:
+The primary functionality is handled by the `ImageTargetDistanceScaleManager` class, which manages the interaction between multiple AR markers and dynamically adjusts the virtual content based on their relative positions. This is achieved through the following core features:
 
-- **Distance Calculation**: Determines the distance between the Content and Plus markers to adjust scaling dynamically.
-- **Distance-Based Scaling**: Adjusts the scale of AR content based on the relative positions of the two markers.
-- **Position Realignment**: Repositions the virtual object to float above the physical marker, maintaining alignment during scaling adjustments.
+### 1. **Distance Calculation**
+The system calculates the distance between the **Content** and **Plus** AR markers using their positions in 3D space. This distance is essential for scaling the virtual object in relation to the markers.
+
+### 2. **Distance-Based Scaling**
+Once the distance is calculated, the `ImageTargetDistanceScaleManager` adjusts the scale of the virtual object associated with the **Content** marker. The scaling factor is dynamically determined based on how close or far apart the **Content** and **Plus** markers are. As the distance changes, the virtual object will either scale up or down accordingly.
+
+### 3. **Position Realignment**
+The virtual object is repositioned above the **Content** marker to maintain a floating effect. After each scaling adjustment, the position of the object is updated to keep it aligned correctly with the **Content** marker, ensuring the virtual object stays in place visually relative to the marker.
+
+---
+
+## `ImageTargetTracker` Class
+
+In addition to the `ImageTargetDistanceScaleManager`, the **`ImageTargetTracker`** class is used to detect whether an AR marker (such as **Content** or **Plus**) is being tracked by the camera. This class doesn't perform any calculations or transformations but rather provides the tracking status. The `ImageTargetDistanceScaleManager` uses this status to determine whether the markers are present, and whether scaling and realignment need to occur.
+
+- **Tracking States**: The `ImageTargetTracker` class uses events like **OnTargetFound** and **OnTargetLost** to update whether the marker is being tracked, which is essential for deciding when to apply changes to the virtual object's scale and position.
+
+---
+
+## Conclusion
+
+The system efficiently handles real-time scaling and positioning of AR content based on the distance between markers. As the user moves the markers closer or further apart, the content will adjust its size accordingly, while always staying aligned above the respective markers.
 
 
 ## Getting Started
