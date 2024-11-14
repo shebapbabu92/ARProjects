@@ -1,0 +1,21 @@
+# Unity generated files
+=========================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]in/
+/[Ll]ogs/
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+# Auto-generated files
+=========================
+*.pidb
+*.suo
+*.user
+*.userprefs
+.idea/
+.vs/
